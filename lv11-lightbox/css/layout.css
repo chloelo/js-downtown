@@ -1,0 +1,354 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 767px) {
+  .wrap {
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    padding: 0;
+  }
+}
+
+h1 {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  border-top: 15px solid #000;
+  padding-top: 85px;
+  position: relative;
+  display: inline-block;
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 100px;
+}
+
+h1::before, h1::after {
+  content: '';
+  position: absolute;
+  background: #000;
+}
+
+h1::before {
+  top: 85px;
+  bottom: 0;
+  left: 110px;
+  width: 1%;
+  height: 27%;
+}
+
+h1::after {
+  top: 85px;
+  bottom: 0;
+  left: 8px;
+  width: 1%;
+  height: 85%;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+    border-top: none;
+    border-left: 15px solid #000;
+    padding-left: 30px;
+    padding-top: 0;
+    font-size: calc(2.5rem + 1.66vw);
+    line-height: 5rem;
+  }
+  h1::before {
+    top: 65px;
+    bottom: 0;
+    left: 30px;
+    width: 29%;
+    height: 1%;
+  }
+  h1::after {
+    top: 145px;
+    bottom: 0;
+    left: 30px;
+    width: calc(100% - 30px);
+    height: 1%;
+  }
+}
+
+main {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 85px;
+}
+
+main a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  display: block;
+  width: 255px;
+  height: 255px;
+  background: #000;
+  margin: 15px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+main a:hover {
+  -webkit-box-shadow: 16px 16px 0 #000;
+          box-shadow: 16px 16px 0 #000;
+}
+
+main a:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+main img {
+  max-width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.lightboxZone {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.img-popup {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #fff;
+  font-size: 32px;
+  text-shadow: 2px 2px #000;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 26px;
+}
+
+.toLeft {
+  left: 30px;
+}
+
+.toRight {
+  right: 30px;
+}
+
+figure {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 40px;
+}
+
+figure img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border: 16px solid #fff;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 870px) {
+  figure {
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+
+blockquote {
+  color: #fff;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 46px;
+}
+
+@media screen and (max-width: 870px) {
+  blockquote {
+    margin: 40px 0 0 0;
+    -ms-flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+.img-page-target {
+  font-size: 72px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 870px) {
+  .img-page-target {
+    font-size: 40px;
+  }
+}
+
+.img-pages {
+  font-size: 36px;
+  vertical-align: sub;
+}
+
+@media screen and (max-width: 870px) {
+  .img-pages {
+    font-size: 22px;
+  }
+}
+
+figcaption {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+@media screen and (max-width: 870px) {
+  figcaption {
+    font-size: 18px;
+  }
+}
+
+cite {
+  font-size: 16px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 870px) {
+  cite {
+    font-size: 13px;
+  }
+}
+
+.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+/*# sourceMappingURL=layout.css.map */

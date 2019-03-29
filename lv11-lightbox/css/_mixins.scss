@@ -1,0 +1,86 @@
+// 命名_function.scss 或是 _mixins.scss
+// function
+@function toRem($px) {
+  @return ($px / $basic-font-size) * 1rem;
+}
+// extend
+%clearfix {
+  // 用%(佔位符)不會被scss編譯 class的(.)不用寫 但@extend時也要加上%
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// 垂直置中的一種寫法
+%vertical-center {
+  position: relative;
+  top: 50%; // 外層空間向下移50%
+  transform: translateY(-50%); //內層空間往上移50%
+}
+
+@mixin displayflex() {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex_align_items($val) {
+  -webkit-align-items: $val;
+  -ms-flex-align: $val;
+  align-items: $val;
+}
+@mixin flex_wrap($val) {
+  -webkit-flex-wrap: $val;
+  -ms-flex-wrap: $val;
+  flex-wrap: $val;
+}
+@mixin flex_direction($val) {
+  -webkit-flex-direction: $val;
+  -ms-flex-direction: $val;
+  flex-direction: $val;
+}
+@mixin flex_justify_content($val) {
+  -webkit-justify-content: $val;
+  justify-content: $val;
+}
+@mixin flex_align_content($val) {
+  -webkit-align-content: $val;
+  align-content: $val;
+}
+@mixin flex_flex($val) {
+  -webkit-flex: $val;
+  flex: $val;
+}
+@mixin flex_grow($val) {
+  -webkit-flex-grow: $val;
+  flex-grow: $val;
+}
+@mixin wrap($val) {
+  margin: 0 auto;
+  max-width: $val;
+}
+
+// content
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin pad-lg {
+  @media screen and (max-width: 870px) {
+    @content;
+  }
+}
+
+// for todolist nav
+@mixin nav_pseudo($pos, $bgcolor, $scale) {
+  content: '';
+  position: $pos;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: $bgcolor;
+  transform: scale($scale);
+}

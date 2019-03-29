@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>downtown-lightbox</title>
+
+    <link rel="stylesheet" href="css/layout.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+      integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>FOX<br />EVERYWHERE</h1>
+      </header>
+      <main class="container">
+        <a href="#" data-num="1"><img src="images/fox-01-s.jpg"/></a>
+        <a href="#" data-num="2"><img src="images/fox-02-s.jpg"/></a>
+        <a href="#" data-num="3"><img src="images/fox-03-s.jpg"/></a>
+        <a href="#" data-num="4"><img src="images/fox-04-s.jpg"/></a>
+        <a href="#" data-num="5"><img src="images/fox-05-s.jpg"/></a>
+        <a href="#" data-num="6"><img src="images/fox-06-s.jpg"/></a>
+      </main>
+    </div>
+    <div class="lightboxZone">
+      <figure>
+        <div class="img-popup">
+          <img class="lightbox" id="lg_1" src="images/fox-01.jpg" />
+          <img class="lightbox" id="lg_2" src="images/fox-02.jpg" />
+          <img class="lightbox" id="lg_3" src="images/fox-03.jpg" />
+          <img class="lightbox" id="lg_4" src="images/fox-04.jpg" />
+          <img class="lightbox" id="lg_5" src="images/fox-05.jpg" />
+          <img class="lightbox" id="lg_6" src="images/fox-06.jpg" />
+          <a href="#" class="close"><i class="fas fa-times-circle"></i></a>
+          <a href="#" class="arrow toLeft"
+            ><i class="fas fa-chevron-left"></i
+          ></a>
+          <a href="#" class="arrow toRight"
+            ><i class="fas fa-chevron-right"></i
+          ></a>
+        </div>
+
+        <blockquote>
+          <p>
+            <span class="img-page-target"></span><sub class="img-pages"></sub>
+          </p>
+          <figcaption>
+            Have you ever seen the cute fox before?<br />
+            <cite>—Erik Mclean</cite>
+          </figcaption>
+        </blockquote>
+      </figure>
+    </div>
+    <script src="js/all.js"></script>
+  </body>
+</html>

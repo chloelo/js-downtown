@@ -1,0 +1,213 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-size: $basic-font-size;
+  font-family: $fox-font-family;
+  position: relative;
+}
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  @include displayflex();
+  @include flex_justify_content(space-around);
+  @include mobile {
+    @include flex_direction(column);
+    padding: 0;
+  }
+}
+
+h1 {
+  writing-mode: vertical-rl;
+  border-top: 15px solid $color-black;
+  padding-top: 85px;
+  position: relative;
+  display: inline-block;
+  font-size: toRem(72px);
+  font-weight: 900;
+  line-height: 100px;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: $color-black;
+  }
+  &::before {
+    top: 85px;
+    bottom: 0;
+    left: 110px;
+    width: 1%;
+    height: 27%;
+  }
+  &::after {
+    top: 85px;
+    bottom: 0;
+    left: 8px;
+    width: 1%;
+    height: 85%;
+  }
+  @include mobile {
+    writing-mode: horizontal-tb;
+    border-top: none;
+    border-left: 15px solid $color-black;
+    padding-left: 30px;
+    padding-top: 0;
+    font-size: calc(2.5rem + 1.66vw);
+    line-height: toRem(80px);
+    &::before {
+      top: 65px;
+      bottom: 0;
+      left: 30px;
+      width: 29%;
+      height: 1%;
+    }
+    &::after {
+      top: 145px;
+      bottom: 0;
+      left: 30px;
+      width: calc(100% - 30px);
+      height: 1%;
+    }
+  }
+}
+
+main {
+  @include displayflex();
+  @include flex_wrap(wrap);
+  @include flex_justify_content(center);
+  margin-top: 85px;
+  a {
+    box-sizing: border-box;
+    overflow: hidden;
+    // flex: 1 30%;
+    display: block;
+    width: 255px;
+    height: 255px;
+    background: $color-black;
+    margin: 15px;
+    transition: all 0.3s ease-in;
+    &:hover {
+      box-shadow: 16px 16px 0 $color-black;
+    }
+    &:hover img {
+      transform: scale(1.2);
+    }
+  }
+  img {
+    max-width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in;
+    object-fit: cover;
+  }
+}
+.lightboxZone {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  @include displayflex();
+  @include flex_justify_content(center);
+  @include flex_align_items(center);
+  //   display: none;
+}
+.img-popup {
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: $color-white;
+  font-size: 32px;
+  text-shadow: 2px 2px #000;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  color: $color-white;
+  font-size: 26px;
+}
+.toLeft {
+  left: 30px;
+}
+.toRight {
+  right: 30px;
+}
+figure {
+  @include displayflex();
+  @include flex_direction(row-reverse);
+  @include flex_justify_content(space-between);
+  // margin: 85px;
+  width: 90%;
+  margin: auto;
+  padding: 40px;
+  img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 16px solid $color-white;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  @include pad-lg {
+    @include flex_direction(column);
+  }
+}
+
+blockquote {
+  color: $color-white;
+  @include displayflex();
+  @include flex_direction(column);
+  @include flex_justify_content(space-between);
+  margin-right: 46px;
+  @include pad-lg {
+    margin: 40px 0 0 0;
+    @include flex_direction(row-reverse);
+  }
+  @mixin mobile {
+    @include flex_direction(column);
+  }
+}
+.img-page-target {
+  font-size: 72px;
+  font-weight: 800;
+  @include pad-lg {
+    font-size: 40px;
+  }
+}
+.img-pages {
+  font-size: 36px;
+  vertical-align: sub;
+  @include pad-lg {
+    font-size: 22px;
+  }
+}
+figcaption {
+  font-size: 24px;
+  line-height: 36px;
+  @include pad-lg {
+    font-size: 18px;
+  }
+}
+cite {
+  font-size: 16px;
+  font-style: italic;
+  @include pad-lg {
+    font-size: 13px;
+  }
+}
+.show {
+  display: flex;
+}
+.hide {
+  display: none;
+}

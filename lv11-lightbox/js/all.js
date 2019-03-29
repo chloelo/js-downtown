@@ -43,7 +43,6 @@ function toNext(e) {
 }
 // 最後都會跑到這 修改index
 function popUpUpdate(index) {
-  console.log(typeof index);
   for (let i = 0; i < popup.length; i++) {
     popup[i].classList.remove('show');
     popup[i].classList.add('hide');

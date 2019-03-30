@@ -70,10 +70,12 @@ window.addEventListener('load', function(e) {
 });
 window.addEventListener('resize', function(e) {
   showH();
+  getInfo();
 });
 function showH() {
-  let docScrH = document.body.scrollHeight;
-  popUpZone.style.height = docScrH + 'px';
+  let h = document.body.scrollHeight;
+  h += 200;
+  popUpZone.style.height = h + 'px';
 }
 
 function getScrollTop() {
@@ -97,3 +99,26 @@ function popUpHide() {
   popUpZone.classList.add('hide');
 }
 popUpHide();
+
+function getInfo() {
+  var s = '';
+  s += ' 網頁可見區域寬：' + document.body.clientWidth;
+  s += ' 網頁可見區域高：' + document.body.clientHeight;
+  s +=
+    ' 網頁可見區域寬：' + document.body.offsetWidth + ' (包括邊線和捲軸的寬)';
+  s += ' 網頁可見區域高：' + document.body.offsetHeight + ' (包括邊線的寬)';
+  s += ' 網頁正文全文寬：' + document.body.scrollWidth;
+  s += ' 網頁正文全文高：' + document.body.scrollHeight;
+  s += ' 網頁被卷去的高(ff)：' + document.body.scrollTop;
+  s += ' 網頁被卷去的高(ie)：' + document.documentElement.scrollTop;
+  s += ' 網頁被卷去的左：' + document.body.scrollLeft;
+  s += ' 網頁正文部分上：' + window.screenTop;
+  s += ' 網頁正文部分左：' + window.screenLeft;
+  s += ' 螢幕解析度的高：' + window.screen.height;
+  s += ' 螢幕解析度的寬：' + window.screen.width;
+  s += ' 螢幕可用工作區高度：' + window.screen.availHeight;
+  s += ' 螢幕可用工作區寬度：' + window.screen.availWidth;
+  s += ' 你的螢幕設置是 ' + window.screen.colorDepth + ' 位彩色';
+  s += ' 你的螢幕設置 ' + window.screen.deviceXDPI + ' 像素/英寸';
+  console.log(s);
+}

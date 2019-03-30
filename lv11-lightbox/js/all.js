@@ -46,6 +46,7 @@ function toNext(e) {
 
 // 最後都會跑到這 修改index
 function popUpUpdate(index) {
+  showH();
   getScrollTop();
   for (let i = 0; i < popup.length; i++) {
     popup[i].classList.remove('show');
@@ -65,15 +66,24 @@ function toClose(e) {
   popUpHide();
 }
 
-window.addEventListener('load', function(e) {
-  showH();
-});
-window.addEventListener('resize', function(e) {
-  showH();
-});
+// window.addEventListener('load', function(e) {
+//   showH();
+// });
+// window.addEventListener('resize', function(e) {
+//   showH();
+// });
 function showH() {
-  let docScrH = document.body.scrollHeight;
-  popUpZone.style.height = docScrH + 'px';
+  let body = document.body;
+  let html = document.documentElement;
+  let h = Math.max(
+    body.scrollHeight,
+    body.offsetHeight,
+    html.clientHeight,
+    html.scrollHeight,
+    html.offsetHeight
+  );
+  // let docScrH = document.body.scrollHeight;
+  popUpZone.style.height = h + 'px';
 }
 
 function getScrollTop() {

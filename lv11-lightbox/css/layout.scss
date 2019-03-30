@@ -178,9 +178,9 @@ blockquote {
     margin: 40px 0 0 0;
     @include flex_direction(row-reverse);
   }
-  @mixin mobile {
-    @include flex_direction(column);
-  }
+  // @include mobile {
+  //   @include flex_direction(column);
+  // }
 }
 .img-page-target {
   font-size: 72px;

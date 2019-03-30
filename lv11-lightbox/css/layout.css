@@ -244,7 +244,7 @@ main img {
   right: 0;
   width: 70%;
   margin: auto;
-  padding: 80px 40px;
+  padding: 40px;
 }
 
 .popupBox img {
@@ -263,7 +263,9 @@ main img {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
-    padding: 50px 40px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 

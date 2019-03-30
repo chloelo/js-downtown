@@ -149,9 +149,10 @@ main {
   position: absolute;
   left: 0;
   right: 0;
+
   width: 70%;
   margin: auto;
-  padding: 80px 40px;
+  padding: 40px;
   img {
     width: 100%;
     max-width: 800px;
@@ -162,7 +163,7 @@ main {
   }
   @include pad-lg {
     @include flex_direction(column);
-    padding: 50px 40px;
+    @include flex_justify_content(flex-start);
   }
 }
 

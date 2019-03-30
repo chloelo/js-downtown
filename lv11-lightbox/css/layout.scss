@@ -109,14 +109,14 @@ main {
 }
 .lightboxZone {
   background: rgba(0, 0, 0, 0.9);
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   top: 0;
   left: 0;
-  @include displayflex();
-  @include flex_justify_content(center);
-  @include flex_align_items(center);
+  // @include displayflex();
+  // @include flex_justify_content(center);
+  // @include flex_align_items(flex-start);
   //   display: none;
 }
 .img-popup {
@@ -142,14 +142,16 @@ main {
 .toRight {
   right: 30px;
 }
-figure {
+.popupBox {
   @include displayflex();
   @include flex_direction(row-reverse);
   @include flex_justify_content(space-between);
-  // margin: 85px;
-  width: 90%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 70%;
   margin: auto;
-  padding: 40px;
+  padding: 80px 40px;
   img {
     width: 100%;
     max-width: 800px;
@@ -160,6 +162,7 @@ figure {
   }
   @include pad-lg {
     @include flex_direction(column);
+    padding: 50px 40px;
   }
 }
 
@@ -206,7 +209,7 @@ cite {
   }
 }
 .show {
-  display: flex;
+  display: block;
 }
 .hide {
   display: none;

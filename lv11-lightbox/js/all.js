@@ -1,16 +1,18 @@
 const imgRow = document.querySelector('main');
 const popUpZone = document.querySelector('.lightboxZone');
+const popupBox = document.querySelector('.popupBox');
 const popup = document.querySelectorAll('.lightbox');
 const close = document.querySelector('.close');
 const imgPageTarget = document.querySelector('.img-page-target');
 const imgPages = document.querySelector('.img-pages');
 const arrowLeft = document.querySelector('.toLeft');
 const arrowRight = document.querySelector('.toRight');
+
 imgRow.addEventListener('click', popUpShow, false);
 close.addEventListener('click', toClose, false);
-
 arrowLeft.addEventListener('click', toPrev, false);
 arrowRight.addEventListener('click', toNext, false);
+
 let targetIndex = 1;
 
 function popUpShow(e) {
@@ -41,8 +43,10 @@ function toNext(e) {
 
   popUpUpdate(targetIndex);
 }
+
 // 最後都會跑到這 修改index
 function popUpUpdate(index) {
+  getScrollTop();
   for (let i = 0; i < popup.length; i++) {
     popup[i].classList.remove('show');
     popup[i].classList.add('hide');
@@ -61,7 +65,35 @@ function toClose(e) {
   popUpHide();
 }
 
+window.addEventListener('load', function(e) {
+  showH();
+});
+window.addEventListener('resize', function(e) {
+  showH();
+});
+function showH() {
+  let docScrH = document.body.scrollHeight;
+  popUpZone.style.height = docScrH + 'px';
+}
+
+function getScrollTop() {
+  let bodyTop = 0;
+  if (typeof window.pageYOffset != 'undefined') {
+    bodyTop = window.pageYOffset;
+  } else if (
+    typeof document.compatMode != 'undefined' &&
+    document.compatMode != 'BackCompat'
+  ) {
+    bodyTop = document.documentElement.scrollTop;
+  } else if (typeof document.body != 'undefined') {
+    bodyTop = document.body.scrollTop;
+  }
+  popupBox.style.top = `${bodyTop}px`;
+}
+
+// 預設開啟網頁就先隱藏 popup
 function popUpHide() {
+  popUpZone.classList.remove('show');
   popUpZone.classList.add('hide');
 }
 popUpHide();
